@@ -8,18 +8,9 @@ public class Main {
         PassengerBogie sleeper = new PassengerBogie("Sleeper", 50);
         PassengerBogie acChair = new PassengerBogie("AC Chair", 30);
 
-        sleeper.showInfo();
-        acChair.showInfo();
-        sleeper.bookSeat();
-        acChair.bookSeat();
-
         GoodsBogie rectangular = new GoodsBogie("Rectangular", 100);
         GoodsBogie cylindrical = new GoodsBogie("Cylindrical", 80);
 
-        rectangular.loadCargo(40);
-        cylindrical.loadCargo(50);
-
-        // UC4: Train Composition
         TrainComposition composition = new TrainComposition(engine);
         composition.addPassengerBogie(sleeper);
         composition.addPassengerBogie(acChair);
@@ -28,5 +19,12 @@ public class Main {
 
         composition.showComposition();
         composition.checkSafety();
+
+        // UC5: Passenger Booking
+        PassengerBooking booking = new PassengerBooking(composition);
+        booking.bookSeat("Sleeper", 5);
+        booking.bookSeat("AC Chair", 2);
+
+        composition.showComposition();
     }
 }
