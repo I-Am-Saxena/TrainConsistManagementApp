@@ -25,6 +25,11 @@ public class Main {
         booking.bookSeat("Sleeper", 5);
         booking.bookSeat("AC Chair", 2);
 
+        // UC6: Goods Cargo Management
+        GoodsManagement goodsMgmt = new GoodsManagement(composition);
+        goodsMgmt.loadCargo("Rectangular", 50);
+        goodsMgmt.loadCargo("Cylindrical", 70);
+
         composition.showComposition();
     }
 }
