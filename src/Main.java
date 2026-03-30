@@ -2,7 +2,7 @@ package src;
 
 public class Main {
     public static void main(String[] args) {
-        // UC1 to UC7 code
+        // UC1 to UC8 code
         TrainEngine engine = new TrainEngine("Diesel");
         engine.start();
 
@@ -34,8 +34,12 @@ public class Main {
         goodsMgmt.loadGoods("Cylindrical", 30);
         goodsMgmt.checkSafety();
 
-        // ---------- UC8: Filter Passenger Bogies ----------
+        // UC8: Filter Passenger Bogies
         PassengerFilter filter = new PassengerFilter(composition.getPassengerBogies());
-        filter.filterHighCapacity(40); // Example: capacity > 40
+        filter.filterHighCapacity(40);
+
+        // ---------- UC9: Group Bogies by Type ----------
+        BogieGrouper grouper = new BogieGrouper(composition.getAllBogies());
+        grouper.groupByType();
     }
 }
